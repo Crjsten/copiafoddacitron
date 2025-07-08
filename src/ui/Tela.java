@@ -1,0 +1,63 @@
+package ui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+@SuppressWarnings("serial")
+public class Tela extends JFrame {
+
+	JButton botaoC = new JButton("Começar");
+	JLabel msg = new JLabel();
+	JTextField texto = new JTextField();
+	JLabel contador = new JLabel();
+	Menu menu = new Menu();
+	int i=-1;
+	
+	public Tela() {
+		botao();
+		contador();
+		caixa();
+		setLayout(null);
+		
+		setTitle("Retroescavabot");
+		setSize(700,700);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
+	}
+	
+	private void botao() {
+		botaoC.setBounds(300,410,100,60);
+		botaoC.addActionListener(menu);
+		add(botaoC);
+	}
+	
+	private void contador() {
+		contador.setBounds(300,350,100,60);
+		add(contador);
+		
+	}
+	
+	private void caixa() {
+		texto.setBounds(200, 290, 300, 40);
+		add(texto);
+	}
+	
+	public JLabel getContador() {
+		return contador;
+	}
+	
+	public void addLabel(String mensagem) {
+		msg.setBounds(250,150,300,60);
+		msg.setText(mensagem);
+		add(msg);
+	}
+	
+	public void alteraLabel() {
+		msg.setText("bom garoto");
+		add(msg);
+	}
+}

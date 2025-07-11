@@ -1,5 +1,6 @@
 package ui;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,17 +17,19 @@ public class Tela extends JFrame {
 	int i=-1;
 	
 	public Tela() {
+		java.net.URL imgUrl = Tela.class.getResource("teste.png");
+		ImageIcon icon = new ImageIcon(imgUrl);
 		botao();
 		contador();
 		caixa();
 		setLayout(null);
-		
 		setTitle("Retroescavabot");
 		setSize(700,700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setVisible(true);
+		setIconImage(icon.getImage());
 	}
 	
 	private void botao() {
@@ -55,6 +58,7 @@ public class Tela extends JFrame {
 		msg.setBounds(250,150,300,60);
 		msg.setText(mensagem);
 	}
+	
 	public void alteraLabel(String mensagem) {
 		msg.setText(mensagem);
 	}

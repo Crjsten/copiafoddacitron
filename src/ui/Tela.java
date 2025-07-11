@@ -51,13 +51,11 @@ public class Tela extends JFrame {
 	}
 	
 	public void addLabel(String mensagem) {
+		add(msg);
 		msg.setBounds(250,150,300,60);
 		msg.setText(mensagem);
-		add(msg);
 	}
-	
-	public void alteraLabel() {
-		msg.setText("bom garoto");
-		add(msg);
+	public void alteraLabel(String mensagem) {
+		msg.setText(mensagem);
 	}
 }

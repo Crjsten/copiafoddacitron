@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class Tela extends JFrame {
 
-	JButton botaoC = new JButton("Começar");
+	public JButton botaoC = new JButton();
 	JLabel msg = new JLabel();
 	JTextField texto = new JTextField();
 	JLabel contador = new JLabel();
@@ -17,7 +17,7 @@ public class Tela extends JFrame {
 	int i=-1;
 	
 	public Tela() {
-		java.net.URL imgUrl = Tela.class.getResource("teste.png");
+		java.net.URL imgUrl = Tela.class.getResource("../img/icone.png");
 		ImageIcon icon = new ImageIcon(imgUrl);
 		botao();
 		contador();
@@ -34,6 +34,7 @@ public class Tela extends JFrame {
 	
 	private void botao() {
 		botaoC.setBounds(300,410,100,60);
+		botaoC.setText("Começar");
 		botaoC.addActionListener(menu);
 		add(botaoC);
 	}

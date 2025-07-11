@@ -7,11 +7,11 @@ import javax.swing.JFrame;
 
 public class Robo {
 	
+	public Timer timer = new Timer();
 	JFrame cara = new JFrame();
-	private int i = -1;
+	public int i = -1;
 
 	public void funfa(int tempo) {
-		Timer timer = new Timer();
 		TimerTask popup = new TimerTask() {
 			@Override
 			public void run() {
@@ -27,6 +27,7 @@ public class Robo {
 				i++;
 				Main.tela.getContador().setText(converteTempo(tempo-i));
 				if(tempo-i<=0) {
+					Main.tela.botaoC.setText("Começar");
 					timer.cancel();
 					popup.run();
 				}

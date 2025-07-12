@@ -13,7 +13,8 @@ public class Menu implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(Main.tela.botaoC.getText().equals("Começar")) {
+		if(Main.tela.botaoC.getText().equals("Começar") || e.getActionCommand().equals("Recomeça")) {
+			robo.timer.cancel();
 			comecaRobo(Main.tela.texto.getText());
 			return;
 		}
@@ -26,6 +27,8 @@ public class Menu implements ActionListener{
 		robo.timer.cancel();
 		robo = new Robo();
 	}
+	
+	
 	
 	private void comecaRobo(String textoCaixa) {
 		robo = new Robo();

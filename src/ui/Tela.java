@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 public class Tela extends JFrame {
 
 	public JButton botaoC = new JButton();
+	public JButton botaoR = new JButton();
 	JLabel msg = new JLabel();
 	JTextField texto = new JTextField();
 	JLabel contador = new JLabel();
@@ -17,10 +18,11 @@ public class Tela extends JFrame {
 	int i=-1;
 	
 	public Tela() {
-		java.net.URL imgUrl = Tela.class.getResource("../img/icone.png");
+		java.net.URL imgUrl = Tela.class.getResource("icone.png");
 		ImageIcon icon = new ImageIcon(imgUrl);
 		botao();
 		contador();
+		recomeca();
 		caixa();
 		setLayout(null);
 		setTitle("Retroescavabot");
@@ -33,10 +35,19 @@ public class Tela extends JFrame {
 	}
 	
 	private void botao() {
-		botaoC.setBounds(300,410,100,60);
+		botaoC.setActionCommand("Começa");
+		botaoC.setBounds(200,410,100,60);
 		botaoC.setText("Começar");
 		botaoC.addActionListener(menu);
 		add(botaoC);
+	}
+	
+	private void recomeca() {
+		botaoR.setActionCommand("Recomeça");
+		botaoR.setBounds(400,410,100,60);
+		botaoR.setText("Recomeçar");
+		botaoR.addActionListener(menu);
+		add(botaoR);
 	}
 	
 	private void contador() {
